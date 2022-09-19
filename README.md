@@ -2,7 +2,11 @@
 
 Personal repo to learn from.
 
-To do:
+## To do:
 - [ ] Investigate Projects
-- [ ] Create labels
+- [ ] Investigate Discussions
 - [ ] Investigate Milestones
+
+## Done:
+
+- [x] Create labels
