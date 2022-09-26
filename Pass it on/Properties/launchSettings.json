@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Pass it on (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Pass it on (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
