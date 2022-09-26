@@ -26,11 +26,28 @@ namespace Pass_it_on
         public MainWindow()
         {
             this.InitializeComponent();
+            this.Title = "Pass it on";
         }
 
-        private void myButton_Click(object sender, RoutedEventArgs e)
+        private void CreateNewSubject(object sender, RoutedEventArgs e)
         {
-            myButton.Content = "Clicked";
+            return;
+        }
+        private void EditSubject(object sender, RoutedEventArgs e)
+        {
+            return;
+        }
+        private void DeleteSubject(object sender, RoutedEventArgs e)
+        {
+            return;
+        }
+        private void SaveEdit(object sender, RoutedEventArgs e)
+        {
+            return;
+        }
+        private void CancelEdit(object sender, RoutedEventArgs e)
+        {
+            return;
         }
     }
 }
