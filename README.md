@@ -1,14 +1,15 @@
 # Learning
 
-Personal repo to learn from.
+Personal repo to learn.
 That's it.
 
-Every change is (probably) done from scratch and done with "fresh eyes". 👁 👁
+Every change I make is probably done from scratch and done with "fresh eyes". 👁 👁
+It's difficult learning all the different languages, but I can say I'm proud of doing things myself.
 
 ## Software
 
-Not decided on what I could possibly make, but I have made a password storage app in the past with AutoIt. I could re-make it with modern languages? Here's a screenshot of it:
+I have made a password storage app in the past with AutoIt. I could re-make it with modern languages. Here's a screenshot of it:
 
 ![Screenshot of old style password app.](images/old-version-of-app.png)
 
-Code name: Pass It On. View [this document](PassItOn.md)
+Code name: Pass It On. View [this document](PassItOn.md) for more info.
