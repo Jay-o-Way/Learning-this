@@ -29,7 +29,7 @@ YouTube playlists:
 
 ## GUI
 
-Should be similar to Windows 11.
+Should be similar to Windows 11. Origin for style = ?
 
 <https://learn.microsoft.com/windows/apps/design/signature-experiences/design-principles>
 
@@ -42,7 +42,9 @@ Settings?
 
 <https://learn.microsoft.com/windows/apps/design/app-settings/guidelines-for-app-settings>
 
-Theme. Import/Export.
+Theme.
+
+Import/Export.
 
 ### Styles
 
@@ -51,6 +53,12 @@ Custom styles should be in a centralized file.
 <https://learn.microsoft.com/windows/apps/design/style/xaml-theme-resources>
 
 ### CODE-BEHIND
+
+> Ideally, all of the methods in a class have a related purpose in the system. The class in the preceding code is named Program.
+
+https://learn.microsoft.com/en-us/training/modules/dotnet-introduction/4-build-your-first-app#code-try-0:~:text=Ideally%2C%20all%20of%20the%20methods%20in%20a%20class%20have%20a%20related%20purpose%20in%20the%20system.%20The%20class%20in%20the%20preceding%20code%20is%20named%20Program.
+
+Classes & methods: mostly via C# or try via XAML?
 
 ## DATA STORAGE
 

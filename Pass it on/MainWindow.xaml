@@ -7,34 +7,93 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     >
-<!--
+    <!--
     Width="300"
     Height="400"
     ExtendsContentIntoTitleBar="True"
-    Title="Pass it on"
+    Title="Pass it on!"
 -->
-
-    <StackPanel Width="400">
-        <ComboBox Header="Subject" x:Uid="CB_text" x:Name="SortingHat" IsEditable="True" HorizontalAlignment="Stretch"
+    <StackPanel>
+        <MenuBar>
+            <MenuBarItem Title="App">
+                <MenuFlyoutItem Text="Info">
+                    <!--Click="OpenInfo"-->
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xe946;"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="Close">
+                    <!--Click="Exit"-->
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xe8bb;"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+            </MenuBarItem>
+            <MenuBarItem Title="Data">
+                <MenuFlyoutItem Text="Import...">
+                    <!--Click="ImportFromFile"-->
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xe8b5;"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="Export...">
+                    <!--Click="ExportToFile"-->
+                    <MenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xede1;"/>
+                    </MenuFlyoutItem.Icon>
+                </MenuFlyoutItem>
+            </MenuBarItem>
+        </MenuBar>
+        <StackPanel Width="400">
+            <!-- Display region -->
+            <ComboBox Header="Subject" x:Name="SortingHat" IsEditable="True" HorizontalAlignment="Stretch"
             >
-            <!--
+                <!--
             ItemsSource="{x:Bind Subjects}"
             TextSubmitted="AtTextSubmitted"
             -->
-            <ComboBoxItem Content="Alfa"/>
-            <ComboBoxItem Content="Bravo"/>
-            <ComboBoxItem Content="Charly"/>
-        </ComboBox>
-        <StackPanel Orientation="Horizontal">
-            <Button Name="CreateButton" Content="Create" Width="100" IsEnabled="{Binding}" Click="CreateNewSubject"/>
-            <Button Name="EditButton" Content="Edit" Width="100" IsEnabled="{Binding}" Click="EditSubject"/>
-            <Button Name="DeleteButton" Content="Delete" Width="100" IsEnabled="{Binding}" Click="DeleteSubject"/>
+                <!--<DataTemplate>-->
+                <ComboBoxItem Content="Alfa"/>
+                <ComboBoxItem Content="Bravo"/>
+                <ComboBoxItem Content="Charly"/>
+                <!--</DataTemplate>-->
+            </ComboBox>
+
+            <StackPanel Orientation="Horizontal">
+                <!--{x:Bind isValidData, Converter=Negation}-->
+                <Button Name="CreateButton" Content="Create" IsEnabled="False" Click="CreateNewSubject"/>
+                <Button Name="EditButton" Content="Edit" IsEnabled="True" Click="EditSubject"/>
+                <Button Name="DeleteButton" Content="Delete" IsEnabled="True" Click="DeleteSubject"/>
+            </StackPanel>
+
+            <TextBlock x:Name="SubjectTitle" Text="Subject title"/>
+
+            <HyperlinkButton x:Name="SubjectLocation" Content="Location" NavigateUri=""/>
+
+            <ComboBox x:Name="SubjectLogin" IsEditable="False" Header="Log-in">
+                <!--bind SortingHat-->
+                <!--<DataTemplate>-->
+                <ComboBoxItem Content="Delta"/>
+                <ComboBoxItem Content="Echo"/>
+                <ComboBoxItem Content="Foxtrot"/>
+                <!--</DataTemplate>-->
+            </ComboBox>
+
+            <TextBlock Text="{x:Bind SubjectLogin.SelectedItem, Mode=OneWay}"/> <!--ItemsSource-->
+
+            <TextBlock x:Name="SubjectPassword" Text="Password"/>
+
+            <!-- Edit region -->
+            <TextBox PlaceholderText="title"/>
+            <TextBox PlaceholderText="location"/>
+            <TextBox PlaceholderText="log-in"/>
+            <PasswordBox PlaceholderText="password"/>
+
+            <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
+                <Button Name="SaveButton" Content="Save" Click="SaveEdit" Style="{StaticResource AccentButtonStyle}" />
+                <Button Name="CancelButton" Content="Cancel" Click="CancelEdit"/>
+            </StackPanel>
         </StackPanel>
-        <TextBox x:Uid="SubjectTitle" PlaceholderText="Subject title" IsEnabled="False"/>
-        <TextBox x:Uid="SubjectLocation" PlaceholderText="Subject location" IsEnabled="False"/>
-        <TextBox x:Uid="SubjectLogin" PlaceholderText="Subject log-in" IsEnabled="False"/>
-        <TextBox x:Uid="SubjectPassword" PlaceholderText="Subject password" IsEnabled="False"/>
-        <Button Name="SaveButton" Visibility="Collapsed" Content="Save" Click="SaveEdit"/>
-        <Button Name="CancelButton" Visibility="Collapsed" Content="Cancel" Click="CancelEdit"/>
     </StackPanel>
+
 </Window>

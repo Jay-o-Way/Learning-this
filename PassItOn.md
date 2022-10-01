@@ -10,13 +10,21 @@ GUI with:
 - Create, Edit, Delete **buttons**
 - Controls to print:
   - subject (aka Title)
-  - location **HyperlinkButton** `IsVisible`
+  - location **HyperlinkButton** `IsVisible=`
   - log-in name (often an e-mail address)
-  - password `IsEnabled = x:bind` _false_ for display, _true_ to edit status
+  - password
 - Save and Cancel **buttons** to enter or dismiss changes
-  `IsVisible = x:bind TrueToVisible` to edit status
-- **Controls** (Arrow buttons? Number? ComboBox?) to select different sub-items and a number to indicate the displayed sub-item. (example: subject "Outlook" can contain multiple e-mail accounts)
+- **DorpDown** to select different sub-items ~and a number to indicate the displayed sub-item~. (example: subject "Outlook" can contain multiple e-mail accounts)
 - Settings: **MenuBar** or something else?
+
+## Open questions
+
+For open questions, have a look at [Discussions](https://github.com/Jay-o-Way/Learning-this/discussions).
+
+Answered questions:
+<dl>
+<dt>Languages</dt><dd>C#, XAML, JSON</dd>
+</dl>
 
 ## To do, or not to do?
 
