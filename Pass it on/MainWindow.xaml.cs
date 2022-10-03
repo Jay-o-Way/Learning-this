@@ -27,39 +27,19 @@ namespace Pass_it_on
         public MainWindow()
         {
             this.InitializeComponent();
-            //this.Title = "Pass it on!";
-            // read data from file?
-            //var passDataFile = Path.Combine(Directory.GetCurrentDirectory(), "DataFile.json");
-            //Console.WriteLine(passDataFile);
-            //if (File.Exists(passDataFile))
-            //{
-            //    var readDataFileContent = File.ReadAllText(passDataFile);
-            //    if (String.IsNullOrEmpty(readDataFileContent))
-            //    {
-            //        Console.WriteLine("Data file exists, but is empty. Creating file now.");
-            //        File.WriteAllText(passDataFile, String.Empty);
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        //populate Combobox?
-
-            //        return;
-            //    }
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Data file does not exist. Creating file now.");
-            //    File.WriteAllText(passDataFile, String.Empty);
-            //}
         }
+    }
 
+    public class ReadWriteData
+    {
         private void CreateNewSubject(object sender, RoutedEventArgs e)
         {
             // read string from ComboBox
             // test if content is valid; format if necessary (whitespace)
             // make input possible
             // set focus to first input
+            RegionDisplay.Visibility = Visibility.Collapsed;
+            RegionEdit.Visibility = Visibility.Visible;
             return;
         }
         private void EditSubject(object sender, RoutedEventArgs e)
@@ -68,6 +48,15 @@ namespace Pass_it_on
             // test if content is valid; format if necessary (whitespace)
             // read data from file
             // make input possible
+            RegionDisplay.Visibility = Visibility.Collapsed;
+            RegionEdit.Visibility = Visibility.Visible;
+            //new subject[4] = {"", "", "", ""};
+            string subject = SelectSubject.SelectedValue.ToString();
+            //if (subject.isValidData())
+            if (subject != null)
+            {
+                Input_Title.Text = subject;
+            }
             // set focus to first input
             return;
         }
@@ -88,14 +77,16 @@ namespace Pass_it_on
             // read data from file
             // if data exists: prompt to overwrite?
             // save data to file
-            // set IsEnabled=false
+            RegionEdit.Visibility = Visibility.Collapsed;
+            RegionDisplay.Visibility = Visibility.Visible;
             return;
         }
         private void CancelEdit(object sender, RoutedEventArgs e)
         {
             // read strings from Input
             // reset input
-            // set IsEnabled=false
+            RegionEdit.Visibility = Visibility.Collapsed;
+            RegionDisplay.Visibility = Visibility.Visible;
             return;
         }
     }

@@ -12,31 +12,37 @@
     Height="400"
     ExtendsContentIntoTitleBar="True"
     Title="Pass it on!"
--->
-    <StackPanel>
-        <MenuBar>
-            <MenuBarItem Title="App">
-                <MenuFlyoutItem Text="Info">
+    -->
+    <!--<StackPanel>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <MenuBar Grid.Row="0">
+            <MenuBarItem x:Uid="MenuBar_App">
+                <MenuFlyoutItem x:Uid="MenuBar_Info">
                     <!--Click="OpenInfo"-->
                     <MenuFlyoutItem.Icon>
                         <FontIcon Glyph="&#xe946;"/>
                     </MenuFlyoutItem.Icon>
                 </MenuFlyoutItem>
-                <MenuFlyoutItem Text="Close">
+                <MenuFlyoutSeparator/>
+                <MenuFlyoutItem x:Uid="MenuBar_Close">
                     <!--Click="Exit"-->
                     <MenuFlyoutItem.Icon>
                         <FontIcon Glyph="&#xe8bb;"/>
                     </MenuFlyoutItem.Icon>
                 </MenuFlyoutItem>
             </MenuBarItem>
-            <MenuBarItem Title="Data">
-                <MenuFlyoutItem Text="Import...">
+            <MenuBarItem x:Uid="MenuBar_Data">
+                <MenuFlyoutItem x:Uid="MenuBar_Import">
                     <!--Click="ImportFromFile"-->
                     <MenuFlyoutItem.Icon>
                         <FontIcon Glyph="&#xe8b5;"/>
                     </MenuFlyoutItem.Icon>
                 </MenuFlyoutItem>
-                <MenuFlyoutItem Text="Export...">
+                <MenuFlyoutItem x:Uid="MenuBar_Export">
                     <!--Click="ExportToFile"-->
                     <MenuFlyoutItem.Icon>
                         <FontIcon Glyph="&#xede1;"/>
@@ -44,13 +50,17 @@
                 </MenuFlyoutItem>
             </MenuBarItem>
         </MenuBar>
-        <StackPanel Width="400">
-            <!-- Display region -->
-            <ComboBox Header="Subject" x:Name="SortingHat" IsEditable="True" HorizontalAlignment="Stretch"
+        <!--#region Display-->
+        <StackPanel Name="RegionDisplay" Grid.Row="1" Visibility="Visible">
+            <ComboBox Name="SelectSubject" Header="Subject" IsEditable="True" HorizontalAlignment="Stretch"
             >
                 <!--
             ItemsSource="{x:Bind Subjects}"
-            TextSubmitted="AtTextSubmitted"
+            TextSubmitted="LoadSubjectData"
+            -->
+                <!--
+            https://learn.microsoft.com/uwp/api/windows.ui.xaml.datatemplate?view=winrt-22621
+            https://learn.microsoft.com/windows/uwp/data-binding/data-binding-in-depth
             -->
                 <!--<DataTemplate>-->
                 <ComboBoxItem Content="Alfa"/>
@@ -60,18 +70,16 @@
             </ComboBox>
 
             <StackPanel Orientation="Horizontal">
+                <Button x:Uid="Button_Create" IsEnabled="False" Click="CreateNewSubject"/>
                 <!--{x:Bind isValidData, Converter=Negation}-->
-                <Button Name="CreateButton" Content="Create" IsEnabled="False" Click="CreateNewSubject"/>
-                <Button Name="EditButton" Content="Edit" IsEnabled="True" Click="EditSubject"/>
-                <Button Name="DeleteButton" Content="Delete" IsEnabled="True" Click="DeleteSubject"/>
+                <Button x:Uid="Button_Edit" IsEnabled="True" Click="EditSubject"/>
+                <Button x:Uid="Button_Delete" IsEnabled="True" Click="DeleteSubject"/>
             </StackPanel>
 
-            <TextBlock x:Name="SubjectTitle" Text="Subject title"/>
+            <HyperlinkButton x:Uid="SubjectLocation" Content="Location" NavigateUri="" />
+            <!--Visibility="{x:Bind SubjectLocation.Content, Converter={StringVisibilityConverter}}"-->
 
-            <HyperlinkButton x:Name="SubjectLocation" Content="Location" NavigateUri=""/>
-
-            <ComboBox x:Name="SubjectLogin" IsEditable="False" Header="Log-in">
-                <!--bind SortingHat-->
+            <ComboBox x:Uid="SubjectLogin" IsEditable="False" Header="Log-in">
                 <!--<DataTemplate>-->
                 <ComboBoxItem Content="Delta"/>
                 <ComboBoxItem Content="Echo"/>
@@ -79,21 +87,24 @@
                 <!--</DataTemplate>-->
             </ComboBox>
 
-            <TextBlock Text="{x:Bind SubjectLogin.SelectedItem, Mode=OneWay}"/> <!--ItemsSource-->
+            <!--<TextBlock Text="{x:Bind SubjectLogin.SelectedItem, Mode=OneWay}"/> ItemsSource-->
 
-            <TextBlock x:Name="SubjectPassword" Text="Password"/>
-
-            <!-- Edit region -->
-            <TextBox PlaceholderText="title"/>
-            <TextBox PlaceholderText="location"/>
-            <TextBox PlaceholderText="log-in"/>
-            <PasswordBox PlaceholderText="password"/>
+            <TextBlock x:Uid="SubjectPassword" Text="Password"/>
+            <ToggleSwitch Name="ShowEdittional" Header="Show Edit controls"/>
+       </StackPanel>
+        <!--#endregion-->
+        <!--#region Edit controls-->
+        <StackPanel Name="RegionEdit" Grid.Row="1" Visibility="{x:Bind ShowEdittional.IsOn, Mode=OneWay}">
+            <TextBox Name="Input_Title" Header="{StaticResource STR_Subject}"/>
+            <TextBox Name="Input_Location"/>
+            <TextBox Name="Input_LogIn"/>
+            <PasswordBox Name="Input_Password"/>
 
             <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
-                <Button Name="SaveButton" Content="Save" Click="SaveEdit" Style="{StaticResource AccentButtonStyle}" />
-                <Button Name="CancelButton" Content="Cancel" Click="CancelEdit"/>
+                <Button x:Uid="Button_Save" Click="SaveEdit" Style="{StaticResource AccentButtonStyle}" />
+                <Button x:Uid="Button_Cancel" Click="CancelEdit"/>
             </StackPanel>
         </StackPanel>
-    </StackPanel>
-
+        <!--#endregion-->
+    </Grid>
 </Window>
