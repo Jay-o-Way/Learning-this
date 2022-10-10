@@ -6,10 +6,13 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
+using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Newtonsoft.Json;
@@ -17,7 +20,7 @@ using Newtonsoft.Json;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace Pass_it_on
+namespace PassItOn
 {
     /// <summary>
     /// An empty window that can be used on its own or navigated to within a Frame.
@@ -28,18 +31,41 @@ namespace Pass_it_on
         {
             this.InitializeComponent();
         }
+
     }
 
     public class ReadWriteData
     {
+        private void LoadSubjectData(ComboBox sender, ComboBoxTextSubmittedEventArgs e)
+        {
+            if (IsValid(e.Text))
+            {
+                SubjectLogin.Text = e.Text;
+            }
+            else
+            {
+                // If the item is invalid, reject it but do not revert the text.
+                // Mark the event as handled so the framework doesn't update the selected item.
+                //sender.Text = sender.SelectedValue.ToString();
+                e.Handled = true;
+            }
+        }
+
+        bool IsValid(string Text)
+        {
+            // Validate that the string is valid
+            return true;
+        }
+
         private void CreateNewSubject(object sender, RoutedEventArgs e)
         {
             // read string from ComboBox
+            // https://learn.microsoft.com/windows/apps/design/controls/combo-box
             // test if content is valid; format if necessary (whitespace)
             // make input possible
-            // set focus to first input
             RegionDisplay.Visibility = Visibility.Collapsed;
             RegionEdit.Visibility = Visibility.Visible;
+            // set focus to first input
             return;
         }
         private void EditSubject(object sender, RoutedEventArgs e)
@@ -56,6 +82,9 @@ namespace Pass_it_on
             if (subject != null)
             {
                 Input_Title.Text = subject;
+                //Input_Location = ?
+                //Input_LogIn = ?
+                //Input_Password = ?
             }
             // set focus to first input
             return;
@@ -83,8 +112,8 @@ namespace Pass_it_on
         }
         private void CancelEdit(object sender, RoutedEventArgs e)
         {
-            // read strings from Input
-            // reset input
+            // read strings from Input?
+            // reset input?
             RegionEdit.Visibility = Visibility.Collapsed;
             RegionDisplay.Visibility = Visibility.Visible;
             return;

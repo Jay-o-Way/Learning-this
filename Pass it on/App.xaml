@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="Pass_it_on.App"
+    x:Class="PassItOn.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Pass_it_on">
+    xmlns:local="using:PassItOn">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
