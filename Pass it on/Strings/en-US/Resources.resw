@@ -153,7 +153,7 @@
   <data name="SelectSubject.Header" xml:space="preserve">
     <value>Subject</value>
   </data>
-  <data name="ShowEdittional.Header" xml:space="preserve">
+  <data name="ShowEditional.Header" xml:space="preserve">
     <value>Show Edit controls</value>
   </data>
   <data name="STR_Location.PlaceholderText" xml:space="preserve">

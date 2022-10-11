@@ -11,11 +11,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+//using System.Text.Json;
+//using System.Text.Json.Serialization;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Newtonsoft.Json;
+//using Microsoft.UI;
+
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -32,15 +33,12 @@ namespace PassItOn
             this.InitializeComponent();
         }
 
-    }
-
-    public class ReadWriteData
-    {
         private void LoadSubjectData(ComboBox sender, ComboBoxTextSubmittedEventArgs e)
         {
+        // https://learn.microsoft.com/en-us/windows/apps/design/controls/combo-box#sample---validate-input-and-add-to-list
             if (IsValid(e.Text))
             {
-                SubjectLogin.Text = e.Text;
+                SubjectLocation.Content = "World!";
             }
             else
             {
@@ -119,4 +117,5 @@ namespace PassItOn
             return;
         }
     }
+
 }

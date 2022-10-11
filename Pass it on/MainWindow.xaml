@@ -51,8 +51,8 @@
             </MenuBarItem>
         </MenuBar>
         <!--#region Display-->
-        <StackPanel Name="RegionDisplay" Grid.Row="1" Visibility="Visible">
-            <ComboBox Name="SelectSubject" IsEditable="True" HorizontalAlignment="Stretch"
+        <StackPanel x:Name="RegionDisplay" Grid.Row="1" Visibility="Visible" Spacing="8">
+            <ComboBox x:Name="SelectSubject" IsEditable="True" HorizontalAlignment="Stretch"
             TextSubmitted="LoadSubjectData"
             >
                 <!--
@@ -69,17 +69,17 @@
                 <!--</DataTemplate>-->
             </ComboBox>
 
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Spacing="8">
                 <Button x:Uid="Button_Create" IsEnabled="False" Click="CreateNewSubject"/>
                 <!--{x:Bind isValidData, Converter=Negation}-->
                 <Button x:Uid="Button_Edit" IsEnabled="True" Click="EditSubject"/>
                 <Button x:Uid="Button_Delete" IsEnabled="True" Click="DeleteSubject"/>
             </StackPanel>
 
-            <HyperlinkButton x:Uid="SubjectLocation" Content="Location" NavigateUri="" />
+            <HyperlinkButton x:Name="SubjectLocation" Content="..." NavigateUri="" />
             <!--Visibility="{x:Bind SubjectLocation.Content, Converter={StringVisibilityConverter}}"-->
 
-            <ComboBox Name="SubjectLogin" IsEditable="False">
+            <ComboBox x:Name="SubjectLogin" IsEditable="False">
                 <!--<DataTemplate>-->
                 <ComboBoxItem Content="Delta"/>
                 <ComboBoxItem Content="Echo"/>
@@ -87,16 +87,16 @@
                 <!--</DataTemplate>-->
             </ComboBox>
 
-            <TextBlock x:Uid="SubjectPassword" Text="Password"/>
-            <ToggleSwitch Name="ShowEdittional"/>
+            <TextBlock x:Uid="SubjectPassword"/>
+            <ToggleSwitch x:Name="ShowEditional"/>
         </StackPanel>
         <!--#endregion-->
         <!--#region Edit controls-->
-        <StackPanel Name="RegionEdit" Grid.Row="1" Visibility="{x:Bind ShowEdittional.IsOn, Mode=OneWay}">
-            <TextBox Name="Input_Title" Header="{StaticResource STR_Subject}"/>
-            <TextBox Name="Input_Location"/>
-            <TextBox Name="Input_LogIn"/>
-            <PasswordBox Name="Input_Password"/>
+        <StackPanel x:Name="RegionEdit" Grid.Row="1" Spacing="8" Visibility="{x:Bind ShowEditional.IsOn, Mode=OneWay}">
+            <TextBox x:Name="Input_Title"/>
+            <TextBox x:Name="Input_Location"/>
+            <TextBox x:Name="Input_LogIn"/>
+            <PasswordBox x:Name="Input_Password"/>
 
             <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
                 <Button x:Uid="Button_Save" Click="SaveEdit" Style="{StaticResource AccentButtonStyle}" />
