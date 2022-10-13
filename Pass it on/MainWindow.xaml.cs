@@ -35,7 +35,7 @@ namespace PassItOn
 
         private void LoadSubjectData(ComboBox sender, ComboBoxTextSubmittedEventArgs e)
         {
-        // https://learn.microsoft.com/en-us/windows/apps/design/controls/combo-box#sample---validate-input-and-add-to-list
+        // https://learn.microsoft.com/windows/apps/design/controls/combo-box#sample---validate-input-and-add-to-list
             if (IsValid(e.Text))
             {
                 SubjectLocation.Content = "World!";
@@ -117,5 +117,4 @@ namespace PassItOn
             return;
         }
     }
-
 }

@@ -6,16 +6,16 @@ Password manager, based on previous development with AutoIt.
 
 GUI with:
 
-- **ComboBox** or **AutoSuggestBox** to select (existing) data or create new subject by typing a new name
+- **ComboBox** to select existing data, or create new subject by typing a new name
+- **DropDown** to select different sub-items. (example: subject "Outlook" can contain multiple e-mail accounts)
 - Create, Edit, Delete **buttons**
 - Controls to print:
   - subject (aka Title)
-  - location **HyperlinkButton** `IsVisible=`
+  - location **hyperlinkButton**
   - log-in name (often an e-mail address)
   - password
 - Save and Cancel **buttons** to enter or dismiss changes
-- **DorpDown** to select different sub-items ~and a number to indicate the displayed sub-item~. (example: subject "Outlook" can contain multiple e-mail accounts)
-- Settings: **MenuBar** or something else?
+- **MenuBar**
 
 ## Open questions
 
@@ -28,15 +28,15 @@ Answered questions:
 
 ## To do, or not to do?
 
-Based on the old work and the existing app, we can say the following.
+Based on the old work of the existing (AutoIt) app, we can say the following.
 
-| Subject                       | Y/M/N | Prio |
+| Function                      | Y/M/N | Prio |
 |-------------------------------|-------|------|
 | Edit and Save passwords       | Y     | 1    |
+| Have a Settings menu          | Y     | 2    |
 | Backup/import data file       | Y     | 3    |
-| Encrypted data storage        | M     | 2    |
+| Encrypted data storage        | M     | 1    |
 | Main password for app         | M     | 2    |
-| Have a Settings menu          | M     | 2    |
-| Translation for UI strings    | M     | 3    |
-| Backup data to online service | N     | Ø    |
+| Translation for UI strings    | M     | 2    |
+| Backup data to cloud          | N     | Ø    |
 | Have update check             | N     | Ø    |

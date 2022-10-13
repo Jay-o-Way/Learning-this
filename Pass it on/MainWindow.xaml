@@ -51,8 +51,8 @@
             </MenuBarItem>
         </MenuBar>
         <!--#region Display-->
-        <StackPanel x:Name="RegionDisplay" Grid.Row="1" Visibility="Visible" Spacing="8">
-            <ComboBox x:Name="SelectSubject" IsEditable="True" HorizontalAlignment="Stretch"
+        <StackPanel x:Name="RegionDisplay" Grid.Row="1" Visibility="Visible">
+            <ComboBox x:Name="SelectSubject" IsEditable="True" HorizontalAlignment="Stretch" Style="{StaticResource ComboMargin}" 
             TextSubmitted="LoadSubjectData"
             >
                 <!--
@@ -69,17 +69,17 @@
                 <!--</DataTemplate>-->
             </ComboBox>
 
-            <StackPanel Orientation="Horizontal" Spacing="8">
-                <Button x:Uid="Button_Create" IsEnabled="False" Click="CreateNewSubject"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Uid="Button_Create" IsEnabled="False" Style="{StaticResource ButtonMarginStyle}" Click="CreateNewSubject"/>
                 <!--{x:Bind isValidData, Converter=Negation}-->
-                <Button x:Uid="Button_Edit" IsEnabled="True" Click="EditSubject"/>
-                <Button x:Uid="Button_Delete" IsEnabled="True" Click="DeleteSubject"/>
+                <Button x:Uid="Button_Edit" IsEnabled="True" Style="{StaticResource ButtonMarginStyle}" Click="EditSubject"/>
+                <Button x:Uid="Button_Delete" IsEnabled="True" Style="{StaticResource ButtonMarginStyle}" Click="DeleteSubject"/>
             </StackPanel>
 
-            <HyperlinkButton x:Name="SubjectLocation" Content="..." NavigateUri="" />
+            <HyperlinkButton x:Name="SubjectLocation" Style="{StaticResource ButtonMarginStyle}" Content="..." NavigateUri="" />
             <!--Visibility="{x:Bind SubjectLocation.Content, Converter={StringVisibilityConverter}}"-->
 
-            <ComboBox x:Name="SubjectLogin" IsEditable="False">
+            <ComboBox x:Name="SubjectLogin" IsEditable="False" Style="{StaticResource ComboMargin}">
                 <!--<DataTemplate>-->
                 <ComboBoxItem Content="Delta"/>
                 <ComboBoxItem Content="Echo"/>
@@ -92,15 +92,15 @@
         </StackPanel>
         <!--#endregion-->
         <!--#region Edit controls-->
-        <StackPanel x:Name="RegionEdit" Grid.Row="1" Spacing="8" Visibility="{x:Bind ShowEditional.IsOn, Mode=OneWay}">
+        <StackPanel x:Name="RegionEdit" Grid.Row="1" Visibility="{x:Bind ShowEditional.IsOn, Mode=OneWay}">
             <TextBox x:Name="Input_Title"/>
             <TextBox x:Name="Input_Location"/>
             <TextBox x:Name="Input_LogIn"/>
             <PasswordBox x:Name="Input_Password"/>
 
             <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
-                <Button x:Uid="Button_Save" Click="SaveEdit" Style="{StaticResource AccentButtonStyle}" />
-                <Button x:Uid="Button_Cancel" Click="CancelEdit"/>
+                <Button x:Uid="Button_Save" Style="{StaticResource AccentButtonStyle}" Click="SaveEdit" />
+                <Button x:Uid="Button_Cancel" Style="{StaticResource ButtonMarginStyle}" Click="CancelEdit"/>
             </StackPanel>
         </StackPanel>
         <!--#endregion-->
