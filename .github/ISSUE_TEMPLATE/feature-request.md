@@ -1,5 +1,5 @@
 ---
-name: "❔ Feature request"
+name: "💡 Feature request"
 about: Suggest an idea for this project
 title: ''
 labels: "enhancement \U0001F4C8"
