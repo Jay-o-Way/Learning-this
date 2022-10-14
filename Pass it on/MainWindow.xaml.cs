@@ -1,22 +1,20 @@
-﻿using Microsoft.UI.Xaml;
+﻿using Microsoft.UI;
+//using Microsoft.UI.Windowing;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
+//using Microsoft.UI.Xaml.Controls.Primitives;
+//using Microsoft.UI.Xaml.Data;
+//using Microsoft.UI.Xaml.Input;
+//using Microsoft.UI.Xaml.Media;
+//using Microsoft.UI.Xaml.Navigation;
 using System;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-//using System.Text.Json;
+//using System.Collections.ObjectModel;
+//using System.Collections.Generic;
+//using System.IO;
+//using System.Linq;
+//using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.Json;
 //using System.Text.Json.Serialization;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-//using Microsoft.UI;
-
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -31,11 +29,31 @@ namespace PassItOn
         public MainWindow()
         {
             this.InitializeComponent();
+            // Retrieve the window handle (HWND) of the current (XAML) WinUI 3 window.
+            var hWnd =
+                WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+            // Retrieve the WindowId that corresponds to hWnd.
+            Microsoft.UI.WindowId windowId =
+                Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
+
+            // Lastly, retrieve the AppWindow for the current (XAML) WinUI 3 window.
+            Microsoft.UI.Windowing.AppWindow appWindow =
+                Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
+
+            if (appWindow != null)
+            {
+                // You now have an AppWindow object, and you can call its methods to manipulate the window.
+                // As an example, let's change the title text of the window.
+                appWindow.Title = "Pass it on!";
+                //appWindow.ClientSize(300, 300);
+            }
+            //source: https://learn.microsoft.com/windows/apps/windows-app-sdk/windowing/windowing-overview
+
         }
 
         private void LoadSubjectData(ComboBox sender, ComboBoxTextSubmittedEventArgs e)
         {
-        // https://learn.microsoft.com/windows/apps/design/controls/combo-box#sample---validate-input-and-add-to-list
             if (IsValid(e.Text))
             {
                 SubjectLocation.Content = "World!";
@@ -47,12 +65,13 @@ namespace PassItOn
                 //sender.Text = sender.SelectedValue.ToString();
                 e.Handled = true;
             }
+            // source: https://learn.microsoft.com/windows/apps/design/controls/combo-box#sample---validate-input-and-add-to-list
         }
 
         bool IsValid(string Text)
         {
             // Validate that the string is valid
-            return true;
+            return (Text != null);
         }
 
         private void CreateNewSubject(object sender, RoutedEventArgs e)
@@ -115,6 +134,11 @@ namespace PassItOn
             RegionEdit.Visibility = Visibility.Collapsed;
             RegionDisplay.Visibility = Visibility.Visible;
             return;
+        }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

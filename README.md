@@ -12,4 +12,4 @@ I have made a password storage app in the past with [AutoIt](https://www.autoits
 
 ![Screenshot of old style password app.](images/old-version-of-app.png)
 
-I can re-make it with modern languages. Code name: Pass It On. View [this document](PassItOn.md) for more info.
+I can re-make it with modern languages. Code name: _Pass It On_. View [this document](PassItOn.md) for more info.
