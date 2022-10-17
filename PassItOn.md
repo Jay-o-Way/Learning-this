@@ -6,14 +6,18 @@ Password manager, based on previous development with AutoIt.
 
 ### Menu
 
-| Control    | Function                                                                                       |
-|:-----------|:-----------------------------------------------------------------------------------------------|
-| **Info**   | opens Project info page<br/><https://github.com/Jay-o-Way/Learning-this/blob/main/PassItOn.md> |
-| **Close**  | closes the app                                                                                 |
-| **Import** | import data from file                                                                          |
-| **Export** | export data to file                                                                            |
+| Control    | Function                                                                                      |
+|:-----------|:----------------------------------------------------------------------------------------------|
+| App        |
+| **Info**   | open Project info page<br/><https://github.com/Jay-o-Way/Learning-this/blob/main/PassItOn.md> |
+| **Close**  | close the app                                                                                 |
+| Data       |
+| **Import** | import data from file                                                                         |
+| **Export** | export data to file                                                                           |
 
 ### View 1: Display data
+
+![Screenshot.](images/PIO-screenshot.png)
 
 | Control           | Function                                                                                       |
 |:------------------|:-----------------------------------------------------------------------------------------------|
@@ -28,6 +32,8 @@ Password manager, based on previous development with AutoIt.
 
 ### View 2: Edit data
 
+![Screenshot.](images/PIO-screenshot-2.png)
+
 | Control           | Function            |
 |:------------------|:--------------------|
 | TextBox           | input subject title |
@@ -36,15 +42,6 @@ Password manager, based on previous development with AutoIt.
 | PasswordBox       | input password      |
 | **Save** button   | confirm input       |
 | **Cancel** button | dismiss changes     |
-
-## Open questions
-
-For open questions, have a look at [Discussions](https://github.com/Jay-o-Way/Learning-this/discussions).
-
-Answered questions:
-<dl>
-<dt>Languages</dt><dd>C#, XAML, JSON</dd>
-</dl>
 
 ## To do, or not to do?
 
@@ -60,3 +57,12 @@ Based on the old work of the existing (AutoIt) app, we can say the following.
 | Translation for UI strings    | M     | 2    |
 | Backup data to cloud          | N     | Ø    |
 | Have update check             | N     | Ø    |
+
+## Open questions
+
+For open questions, have a look at [Discussions](https://github.com/Jay-o-Way/Learning-this/discussions) in this repo.
+
+Answered questions:
+<dl>
+<dt>Languages</dt><dd>C#, XAML, JSON</dd>
+</dl>
