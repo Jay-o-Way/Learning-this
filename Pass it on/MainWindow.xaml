@@ -8,9 +8,6 @@
     mc:Ignorable="d"
     >
     <!--
-    Width="300"
-    Height="300"
-    Title="Pass it on!"
     ExtendsContentIntoTitleBar="True"
     -->
     <Grid>
@@ -21,8 +18,7 @@
         <!--Menu-->
         <MenuBar Grid.Row="0">
             <MenuBarItem x:Uid="MenuBar_App">
-                <MenuFlyoutItem x:Uid="MenuBar_Info">
-                    <!--Click="OpenInfo"-->
+                <MenuFlyoutItem x:Uid="MenuBar_Info" Click="OpenInfo">
                     <MenuFlyoutItem.Icon>
                         <FontIcon Glyph="&#xe946;"/>
                     </MenuFlyoutItem.Icon>
@@ -51,7 +47,7 @@
         </MenuBar>
         <!--#region Display-->
         <StackPanel x:Name="RegionDisplay" Grid.Row="1" Visibility="Visible" Style="{StaticResource MainStackStyle}">
-            <ComboBox x:Name="SelectSubject" IsEditable="True" HorizontalAlignment="Stretch"
+            <ComboBox x:Name="SelectSubject" x:Uid="SelectSubject" IsEditable="True" HorizontalAlignment="Stretch"
             TextSubmitted="LoadSubjectData"
             >
                 <!--
@@ -75,10 +71,17 @@
                 <Button x:Uid="Button_Delete" IsEnabled="True" Click="DeleteSubject"/>
             </StackPanel>
 
-            <HyperlinkButton x:Name="SubjectLocation" Content="..." NavigateUri=""/>
+            <HyperlinkButton x:Name="SubjectLocation" x:Uid="SubjectLocation"
+                             HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
+                             Content="" NavigateUri="">
+                <ToolTipService.ToolTip>
+                    <ToolTip x:Uid="ToolTipMessage_Open" Placement="Bottom"/>
+                </ToolTipService.ToolTip>
+            </HyperlinkButton>
+
             <!--Visibility="{x:Bind SubjectLocation.Content, Converter={StringVisibilityConverter}}"-->
 
-            <ComboBox x:Name="SubjectLogin" IsEditable="False">
+            <ComboBox x:Name="SubjectLogin" x:Uid="SubjectLogin" HorizontalAlignment="Stretch">
                 <!--<DataTemplate>-->
                 <ComboBoxItem Content="Delta"/>
                 <ComboBoxItem Content="Echo"/>
@@ -86,16 +89,15 @@
                 <!--</DataTemplate>-->
             </ComboBox>
 
-            <TextBlock x:Uid="SubjectPassword"/>
-            <ToggleSwitch x:Name="ShowEditional"/>
+            <TextBox x:Name="SubjectPassword" x:Uid="SubjectPassword" FontFamily="Consolas" IsReadOnly="true"/>
         </StackPanel>
         <!--#endregion-->
         <!--#region Edit controls-->
-        <StackPanel x:Name="RegionEdit" Grid.Row="1" Visibility="{x:Bind ShowEditional.IsOn, Mode=OneWay}"  Style="{StaticResource MainStackStyle}">
-            <TextBox x:Name="Input_Title"/>
-            <TextBox x:Name="Input_Location"/>
-            <TextBox x:Name="Input_LogIn"/>
-            <PasswordBox x:Name="Input_Password"/>
+        <StackPanel x:Name="RegionEdit" Grid.Row="1" Visibility="Collapsed" Style="{StaticResource MainStackStyle}">
+            <TextBox x:Name="Input_Title" x:Uid="Input_Title"/>
+            <TextBox x:Name="Input_Location" x:Uid="Input_Location"/>
+            <TextBox x:Name="Input_LogIn" x:Uid="Input_LogIn"/>
+            <PasswordBox x:Name="Input_Password" x:Uid="Input_Password"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Style="{StaticResource StackStyle}">
                 <Button x:Uid="Button_Save" Style="{StaticResource AccentButtonStyle}" Click="SaveEdit" />

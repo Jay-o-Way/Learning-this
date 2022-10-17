@@ -132,6 +132,18 @@
   <data name="Button_Save.Content" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="Input_Location.Header" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="Input_Login.Header" xml:space="preserve">
+    <value>Log-in name</value>
+  </data>
+  <data name="Input_Password.Header" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Input_Title.Header" xml:space="preserve">
+    <value>Title</value>
+  </data>
   <data name="MenuBar_App.Title" xml:space="preserve">
     <value>App</value>
   </data>
@@ -156,22 +168,13 @@
   <data name="ShowEditional.Header" xml:space="preserve">
     <value>Show Edit controls</value>
   </data>
-  <data name="STR_Location.PlaceholderText" xml:space="preserve">
-    <value>Location</value>
-  </data>
-  <data name="STR_LogIn.PlaceholderText" xml:space="preserve">
-    <value>Log-in</value>
-  </data>
-  <data name="STR_Password.PlaceholderText" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="STR_Title.PlaceholderText" xml:space="preserve">
-    <value>Title</value>
-  </data>
   <data name="SubjectLogin.Header" xml:space="preserve">
     <value>Log-in</value>
   </data>
   <data name="SubjectPassword.Text" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="ToolTipMessage_Open.Content" xml:space="preserve">
+    <value>Click to open</value>
   </data>
 </root>

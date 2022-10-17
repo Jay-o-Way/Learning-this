@@ -2,20 +2,40 @@
 
 Password manager, based on previous development with AutoIt.
 
-## Features
+## GUI
 
-GUI with:
+### Menu
 
-- **ComboBox** to select existing data, or create new subject by typing a new name
-- **DropDown** to select different sub-items. (example: subject "Outlook" can contain multiple e-mail accounts)
-- Create, Edit, Delete **buttons**
-- Controls to print:
-  - subject (aka Title)
-  - location **hyperlinkButton**
-  - log-in name (often an e-mail address)
-  - password
-- Save and Cancel **buttons** to enter or dismiss changes
-- **MenuBar**
+| Control    | Function                                                                                       |
+|:-----------|:-----------------------------------------------------------------------------------------------|
+| **Info**   | opens Project info page<br/><https://github.com/Jay-o-Way/Learning-this/blob/main/PassItOn.md> |
+| **Close**  | closes the app                                                                                 |
+| **Import** | import data from file                                                                          |
+| **Export** | export data to file                                                                            |
+
+### View 1: Display data
+
+| Control           | Function                                                                                       |
+|:------------------|:-----------------------------------------------------------------------------------------------|
+| ComboBox          | to select existing data, or create new subject by typing a new name                            |
+| DropDown          | select different sub-items<br/>example: subject "Outlook" can contain multiple e-mail accounts |
+| **Create** button | create new subject, starting with ComboBox text                                                |
+| **Edit** button   | exit selected subject                                                                          |
+| **Delete** button | delete selected subject                                                                        |
+| HyperlinkButton   | open URL                                                                                       |
+| ComboBox          | select field "name" (often an e-mail address)                                                  |
+| TextBox           | display password                                                                               |
+
+### View 2: Edit data
+
+| Control           | Function            |
+|:------------------|:--------------------|
+| TextBox           | input subject title |
+| TextBox           | input location      |
+| TextBox           | input log-in name   |
+| PasswordBox       | input password      |
+| **Save** button   | confirm input       |
+| **Cancel** button | dismiss changes     |
 
 ## Open questions
 
