@@ -17,41 +17,31 @@ Password manager, based on previous development with AutoIt.
 
 ### View 1: Display data
 
-:::row:::
-    :::column:::
-        ![Screenshot.](images/PIO-screenshot.png)
-    :::column-end:::
-    :::column span="2":::
-        | Control           | Function                                                                                       |
-        |:------------------|:-----------------------------------------------------------------------------------------------|
-        | ComboBox          | select existing data, or create new subject                                                    |
-        | DropDown          | select different sub-items<br/>example: subject "Outlook" can contain multiple e-mail accounts |
-        | **Create** button | create new subject, starting with ComboBox text                                                |
-        | **Edit** button   | exit selected subject                                                                          |
-        | **Delete** button | delete selected subject                                                                        |
-        | HyperlinkButton   | open URL                                                                                       |
-        | ComboBox          | select field "name" (often an e-mail address)                                                  |
-        | TextBox           | display password                                                                               |
-    :::column-end:::
-:::row-end:::
+![Screenshot.](images/PIO-screenshot.png)
+
+| Control           | Function                                                                                       |
+|:------------------|:-----------------------------------------------------------------------------------------------|
+| ComboBox          | to select existing data, or create new subject by typing a new name                            |
+| DropDown          | select different sub-items<br/>example: subject "Outlook" can contain multiple e-mail accounts |
+| **Create** button | create new subject, starting with ComboBox text                                                |
+| **Edit** button   | exit selected subject                                                                          |
+| **Delete** button | delete selected subject                                                                        |
+| HyperlinkButton   | open URL                                                                                       |
+| ComboBox          | select field "name" (often an e-mail address)                                                  |
+| TextBox           | display password                                                                               |
 
 ### View 2: Edit data
 
-:::row:::
-    :::column:::
-        ![Screenshot.](images/PIO-screenshot-2.png)
-    :::column-end:::
-    :::column span="2":::
-        | Control           | Function            |
-        |:------------------|:--------------------|
-        | TextBox           | input subject title |
-        | TextBox           | input location      |
-        | TextBox           | input log-in name   |
-        | PasswordBox       | input password      |
-        | **Save** button   | confirm input       |
-        | **Cancel** button | dismiss changes     |
-    :::column-end:::
-:::row-end:::
+![Screenshot.](images/PIO-screenshot-2.png)
+
+| Control           | Function            |
+|:------------------|:--------------------|
+| TextBox           | input subject title |
+| TextBox           | input location      |
+| TextBox           | input log-in name   |
+| PasswordBox       | input password      |
+| **Save** button   | confirm input       |
+| **Cancel** button | dismiss changes     |
 
 ## To do, or not to do?
 
