@@ -159,7 +159,7 @@
   <data name="SubjectLogin.Header" xml:space="preserve">
     <value>Inlog-naam</value>
   </data>
-  <data name="SubjectPassword.Text" xml:space="preserve">
+  <data name="SubjectPassword.Header" xml:space="preserve">
     <value>Wachtwoord</value>
   </data>
   <data name="Input_Location.Header" xml:space="preserve">
@@ -176,5 +176,14 @@
   </data>
   <data name="ToolTipMessage_Open.Content" xml:space="preserve">
     <value>Klik om te openen</value>
+  </data>
+  <data name="MenuBar_Create.Text" xml:space="preserve">
+    <value>Maken</value>
+  </data>
+  <data name="MenuBar_Delete.Text" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="MenuBar_Edit.Text" xml:space="preserve">
+    <value>Bewerken</value>
   </data>
 </root>

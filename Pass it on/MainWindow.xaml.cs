@@ -60,10 +60,10 @@ namespace PassItOn
             if (IsValid(cbText))
             {
                 Console.WriteLine($"Loading data for subject {cbText}");
-                SubjectLogin.Text = "Name";
                 SubjectLocation.Content = "World!";
                 var uri = new Uri("http://go.go");
                 SubjectLocation.NavigateUri = uri;
+                SubjectLogin.Text = "Name";
                 SubjectPassword.Text = "Password";
             }
             else

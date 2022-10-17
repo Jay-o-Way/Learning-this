@@ -31,6 +31,11 @@
                 </MenuFlyoutItem>
             </MenuBarItem>
             <MenuBarItem x:Uid="MenuBar_Data">
+                <!--region copy from buttons-->
+                <MenuFlyoutItem x:Uid="MenuBar_Create" Icon="Add" Click="CreateNewSubject"/>
+                <MenuFlyoutItem x:Uid="MenuBar_Edit" Icon="Edit" Click="EditSubject"/>
+                <MenuFlyoutItem x:Uid="MenuBar_Delete" Icon="Delete" Click="DeleteSubject"/>
+                <MenuFlyoutSeparator/>
                 <MenuFlyoutItem x:Uid="MenuBar_Import">
                     <!--Click="ImportFromFile"-->
                     <MenuFlyoutItem.Icon>
@@ -64,22 +69,18 @@
                 <!--</DataTemplate>-->
             </ComboBox>
 
-            <StackPanel Orientation="Horizontal" Style="{StaticResource StackStyle}">
-                <Button x:Uid="Button_Create" IsEnabled="False" Click="CreateNewSubject"/>
-                <!--{x:Bind isValidData, Converter=Negation}-->
-                <Button x:Uid="Button_Edit" IsEnabled="True" Click="EditSubject"/>
-                <Button x:Uid="Button_Delete" IsEnabled="True" Click="DeleteSubject"/>
-            </StackPanel>
+            <TextBlock/>
 
             <HyperlinkButton x:Name="SubjectLocation" x:Uid="SubjectLocation"
                              HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
-                             Content="" NavigateUri="">
+                             Content="" NavigateUri=""
+                >
+                <!--Visibility="{x:Bind SubjectLocation.Content, Converter={StringVisibilityConverter}}"-->
                 <ToolTipService.ToolTip>
                     <ToolTip x:Uid="ToolTipMessage_Open" Placement="Bottom"/>
                 </ToolTipService.ToolTip>
             </HyperlinkButton>
 
-            <!--Visibility="{x:Bind SubjectLocation.Content, Converter={StringVisibilityConverter}}"-->
 
             <ComboBox x:Name="SubjectLogin" x:Uid="SubjectLogin" HorizontalAlignment="Stretch">
                 <!--<DataTemplate>-->
@@ -89,7 +90,13 @@
                 <!--</DataTemplate>-->
             </ComboBox>
 
-            <TextBox x:Name="SubjectPassword" x:Uid="SubjectPassword" FontFamily="Consolas" IsReadOnly="true"/>
+            <TextBox x:Name="SubjectPassword" x:Uid="SubjectPassword" IsReadOnly="true"/>
+
+            <StackPanel Orientation="Horizontal" Style="{StaticResource StackStyle}">
+                <Button x:Uid="Button_Create" IsEnabled="False" Click="CreateNewSubject"/>
+                <Button x:Uid="Button_Edit" IsEnabled="True" Click="EditSubject"/>
+                <Button x:Uid="Button_Delete" IsEnabled="True" Click="DeleteSubject"/>
+            </StackPanel>
         </StackPanel>
         <!--#endregion-->
         <!--#region Edit controls-->
@@ -100,7 +107,7 @@
             <PasswordBox x:Name="Input_Password" x:Uid="Input_Password"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Style="{StaticResource StackStyle}">
-                <Button x:Uid="Button_Save" Style="{StaticResource AccentButtonStyle}" Click="SaveEdit" />
+                <Button x:Uid="Button_Save" Style="{ThemeResource AccentButtonStyle}" Click="SaveEdit" />
                 <Button x:Uid="Button_Cancel" Click="CancelEdit"/>
             </StackPanel>
         </StackPanel>
