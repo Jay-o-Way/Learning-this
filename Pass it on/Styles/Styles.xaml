@@ -2,10 +2,10 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style x:Key="StackStyle" TargetType="StackPanel">
+    <Style x:Key="ChildStackStyle" TargetType="StackPanel">
         <Setter Property="Spacing" Value="8"/>
     </Style>
-    <Style x:Key="MainStackStyle" TargetType="StackPanel" BasedOn="{StaticResource StackStyle}">
-        <Setter Property="Padding" Value="12,8"/>
+    <Style x:Key="PrimaryStackStyle" TargetType="StackPanel" BasedOn="{StaticResource ChildStackStyle}">
+        <Setter Property="Margin" Value="12"/>
     </Style>
 </ResourceDictionary>

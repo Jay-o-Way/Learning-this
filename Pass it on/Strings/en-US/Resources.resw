@@ -132,18 +132,6 @@
   <data name="Button_Save.Content" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="Input_Location.Header" xml:space="preserve">
-    <value>Location</value>
-  </data>
-  <data name="Input_Login.Header" xml:space="preserve">
-    <value>Log-in name</value>
-  </data>
-  <data name="Input_Password.Header" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="Input_Title.Header" xml:space="preserve">
-    <value>Title</value>
-  </data>
   <data name="MenuBar_App.Title" xml:space="preserve">
     <value>App</value>
   </data>
@@ -175,8 +163,8 @@
   <data name="SelectSubject.Header" xml:space="preserve">
     <value>Subject</value>
   </data>
-  <data name="ShowEditional.Header" xml:space="preserve">
-    <value>Show Edit controls</value>
+  <data name="SubjectLocation.Header" xml:space="preserve">
+    <value>Location</value>
   </data>
   <data name="SubjectLogin.Header" xml:space="preserve">
     <value>Log-in</value>

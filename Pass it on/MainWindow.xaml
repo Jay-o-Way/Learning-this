@@ -10,12 +10,13 @@
     <!--
     ExtendsContentIntoTitleBar="True"
     -->
-    <Grid>
+    <Grid Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <!--Menu-->
+        <!-- Menu -->
         <MenuBar Grid.Row="0">
             <MenuBarItem x:Uid="MenuBar_App">
                 <MenuFlyoutItem x:Uid="MenuBar_Info" Click="OpenInfo">
@@ -50,13 +51,16 @@
                 </MenuFlyoutItem>
             </MenuBarItem>
         </MenuBar>
-        <!--#region Display-->
-        <StackPanel x:Name="RegionDisplay" Grid.Row="1" Visibility="Visible" Style="{StaticResource MainStackStyle}">
-            <ComboBox x:Name="SelectSubject" x:Uid="SelectSubject" IsEditable="True" HorizontalAlignment="Stretch"
-            TextSubmitted="LoadSubjectData"
+
+        <!-- Display -->
+        <StackPanel x:Name="RegionDisplay" Grid.Row="1" Visibility="Visible" Style="{StaticResource PrimaryStackStyle}">
+            <ComboBox x:Name="SelectSubject" x:Uid="SubjectTitle"
+                      IsEditable="True" HorizontalAlignment="Stretch"
+                      TextSubmitted="LoadSubjectData"
             >
                 <!--
             ItemsSource="{x:Bind Subjects}"
+            SelectionChanged="LoadSubjectData" ?
             -->
                 <!--
             https://learn.microsoft.com/uwp/api/windows.ui.xaml.datatemplate?view=winrt-22621
@@ -69,19 +73,18 @@
                 <!--</DataTemplate>-->
             </ComboBox>
 
-            <TextBlock/>
-
-            <HyperlinkButton x:Name="SubjectLocation" x:Uid="SubjectLocation"
-                             HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
-                             Content="" NavigateUri=""
-                >
-                <!--Visibility="{x:Bind SubjectLocation.Content, Converter={StringVisibilityConverter}}"-->
+            <TextBox x:Name="SubjectLocation" x:Uid="SubjectLocation"
+                     IsReadOnly="true"
+                     HorizontalAlignment="Stretch"
+                     Background="Transparent"
+                     >
                 <ToolTipService.ToolTip>
                     <ToolTip x:Uid="ToolTipMessage_Open" Placement="Bottom"/>
                 </ToolTipService.ToolTip>
-            </HyperlinkButton>
-
-
+            </TextBox>
+            <!--<HyperlinkButton x:Name="SubjectLocationLink" x:Uid="SubjectLocation"
+            Content="" NavigateUri="">
+            </Hyperlink>-->
             <ComboBox x:Name="SubjectLogin" x:Uid="SubjectLogin" HorizontalAlignment="Stretch">
                 <!--<DataTemplate>-->
                 <ComboBoxItem Content="Delta"/>
@@ -91,26 +94,25 @@
             </ComboBox>
 
             <TextBox x:Name="SubjectPassword" x:Uid="SubjectPassword" IsReadOnly="true"/>
-
-            <StackPanel Orientation="Horizontal" Style="{StaticResource StackStyle}">
-                <Button x:Uid="Button_Create" IsEnabled="False" Click="CreateNewSubject"/>
-                <Button x:Uid="Button_Edit" IsEnabled="True" Click="EditSubject"/>
-                <Button x:Uid="Button_Delete" IsEnabled="True" Click="DeleteSubject"/>
-            </StackPanel>
         </StackPanel>
-        <!--#endregion-->
-        <!--#region Edit controls-->
-        <StackPanel x:Name="RegionEdit" Grid.Row="1" Visibility="Collapsed" Style="{StaticResource MainStackStyle}">
-            <TextBox x:Name="Input_Title" x:Uid="Input_Title"/>
-            <TextBox x:Name="Input_Location" x:Uid="Input_Location"/>
-            <TextBox x:Name="Input_LogIn" x:Uid="Input_LogIn"/>
-            <PasswordBox x:Name="Input_Password" x:Uid="Input_Password"/>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Style="{StaticResource StackStyle}">
-                <Button x:Uid="Button_Save" Style="{ThemeResource AccentButtonStyle}" Click="SaveEdit" />
-                <Button x:Uid="Button_Cancel" Click="CancelEdit"/>
-            </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Style="{StaticResource PrimaryStackStyle}" Visibility="{x:Bind RegionDisplay.Visibility, Mode=OneWay}">
+            <Button x:Uid="Button_Create" IsEnabled="False" Click="CreateNewSubject"/>
+            <Button x:Uid="Button_Edit" IsEnabled="True" Click="EditSubject"/>
+            <Button x:Uid="Button_Delete" IsEnabled="True" Click="DeleteSubject"/>
         </StackPanel>
-        <!--#endregion-->
+
+        <!-- Edit -->
+        <StackPanel x:Name="RegionEdit" Grid.Row="1" Visibility="Collapsed" Style="{StaticResource PrimaryStackStyle}">
+            <TextBox x:Name="Input_Title" x:Uid="SubjectTitle"/>
+            <TextBox x:Name="Input_Location" x:Uid="SubjectLocation"/>
+            <TextBox x:Name="Input_LogIn" x:Uid="SubjectLogIn"/>
+            <PasswordBox x:Name="Input_Password" x:Uid="SubjectPassword"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Stretch" Style="{StaticResource PrimaryStackStyle}" Visibility="{x:Bind RegionEdit.Visibility, Mode=OneWay}">
+            <Button x:Uid="Button_Save" Style="{ThemeResource AccentButtonStyle}" Click="SaveEdit" />
+            <Button x:Uid="Button_Cancel" Click="CancelEdit"/>
+        </StackPanel>
     </Grid>
 </Window>

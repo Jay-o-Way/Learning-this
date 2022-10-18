@@ -31,6 +31,8 @@ namespace PassItOn
         public MainWindow()
         {
             this.InitializeComponent();
+            //ExtendsContentIntoTitleBar = true; // works, but is super ugly
+
             // Retrieve the window handle (HWND) of the current (XAML) WinUI 3 window.
             var hWnd =
                 WinRT.Interop.WindowNative.GetWindowHandle(this);
@@ -48,10 +50,10 @@ namespace PassItOn
                 // You now have an AppWindow object, and you can call its methods to manipulate the window.
                 // As an example, let's change the title text of the window.
                 appWindow.Title = "Pass it on!";
-                var clientSize = new SizeInt32(300, 360);
+                var clientSize = new SizeInt32(300, 400);
                 appWindow.ResizeClient(clientSize);
             }
-            //source: https://learn.microsoft.com/windows/apps/windows-app-sdk/windowing/windowing-overview
+            // source: https://learn.microsoft.com/windows/apps/windows-app-sdk/windowing/windowing-overview
         }
 
         private void LoadSubjectData(ComboBox sender, ComboBoxTextSubmittedEventArgs e)
@@ -60,9 +62,9 @@ namespace PassItOn
             if (IsValid(cbText))
             {
                 Console.WriteLine($"Loading data for subject {cbText}");
-                SubjectLocation.Content = "World!";
-                var uri = new Uri("http://go.go");
-                SubjectLocation.NavigateUri = uri;
+                SubjectLocation.Text = "World!";
+                //var uri = new Uri("http://go.go");
+                //SubjectLocation.NavigateUri = uri;
                 SubjectLogin.Text = "Name";
                 SubjectPassword.Text = "Password";
             }
@@ -70,7 +72,7 @@ namespace PassItOn
             {
                 // If the item is invalid, reject it but do not revert the text.
                 // Mark the event as handled so the framework doesn't update the selected item.
-                SubjectLocation.Content = string.Empty;
+                SubjectLocation.Text = string.Empty;
                 SubjectLogin.Text = string.Empty;
                 SubjectPassword.Text = string.Empty;
                 e.Handled = true;
@@ -143,7 +145,7 @@ namespace PassItOn
                 // delete subject from file
                 Console.WriteLine($"Deleting subject {cbText} from file");
                 // set ComboBox + others
-                SubjectLocation.Content = string.Empty;
+                SubjectLocation.Text = string.Empty;
                 SubjectLogin.Text = string.Empty;
                 SubjectPassword.Text = string.Empty;
             }
@@ -191,7 +193,7 @@ namespace PassItOn
             myProcess.StartInfo.UseShellExecute = true;
             myProcess.StartInfo.FileName = "https://github.com/Jay-o-Way/Learning-this/blob/main/PassItOn.md";
             myProcess.Start();
-            //source: https://stackoverflow.com/questions/70854882/how-to-open-new-browser-window-in-c-winui-3
+            // source: https://stackoverflow.com/questions/70854882/how-to-open-new-browser-window-in-c-winui-3
         }
     }
 }

@@ -12,6 +12,9 @@ Password manager, based on previous development with AutoIt.
 | **Info**   | open Project info page<br/><https://github.com/Jay-o-Way/Learning-this/blob/main/PassItOn.md> |
 | **Close**  | close the app                                                                                 |
 | Data       |
+| **Create** | create new subject, starting with ComboBox text                                               |
+| **Edit**   | exit selected subject                                                                         |
+| **Delete** | delete selected subject                                                                       |
 | **Import** | import data from file                                                                         |
 | **Export** | export data to file                                                                           |
 
@@ -21,14 +24,14 @@ Password manager, based on previous development with AutoIt.
 
 | Control           | Function                                                                                       |
 |:------------------|:-----------------------------------------------------------------------------------------------|
-| ComboBox          | to select existing data, or create new subject by typing a new name                            |
+| ComboBox          | select existing data, or create new subject by typing a new name                               |
 | DropDown          | select different sub-items<br/>example: subject "Outlook" can contain multiple e-mail accounts |
-| **Create** button | create new subject, starting with ComboBox text                                                |
-| **Edit** button   | exit selected subject                                                                          |
-| **Delete** button | delete selected subject                                                                        |
 | HyperlinkButton   | open URL                                                                                       |
 | ComboBox          | select field "name" (often an e-mail address)                                                  |
 | TextBox           | display password                                                                               |
+| **Create** button | create new subject, starting with ComboBox text                                                |
+| **Edit** button   | exit selected subject                                                                          |
+| **Delete** button | delete selected subject                                                                        |
 
 ### View 2: Edit data
 

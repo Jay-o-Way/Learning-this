@@ -142,7 +142,7 @@
     <value>Sluiten</value>
   </data>
   <data name="MenuBar_Data.Title" xml:space="preserve">
-    <value>Data</value>
+    <value>Gegevens</value>
   </data>
   <data name="MenuBar_Export.Text" xml:space="preserve">
     <value>Exporteren...</value>
@@ -150,29 +150,17 @@
   <data name="MenuBar_Import.Text" xml:space="preserve">
     <value>Importeren...</value>
   </data>
-  <data name="SelectSubject.Header" xml:space="preserve">
+  <data name="SubjectTitle.Header" xml:space="preserve">
     <value>Onderwerp</value>
   </data>
-  <data name="ShowEditional.Header" xml:space="preserve">
-    <value>Tool bewerking</value>
-  </data>
   <data name="SubjectLogin.Header" xml:space="preserve">
-    <value>Inlog-naam</value>
+    <value>Inlognaam</value>
   </data>
   <data name="SubjectPassword.Header" xml:space="preserve">
     <value>Wachtwoord</value>
   </data>
-  <data name="Input_Location.Header" xml:space="preserve">
+  <data name="SubjectLocation.Header" xml:space="preserve">
     <value>Locatie</value>
-  </data>
-  <data name="Input_Login.Header" xml:space="preserve">
-    <value>Inlognaam</value>
-  </data>
-  <data name="Input_Password.Header" xml:space="preserve">
-    <value>Wachtwoord</value>
-  </data>
-  <data name="Input_Title.Header" xml:space="preserve">
-    <value>Titel</value>
   </data>
   <data name="ToolTipMessage_Open.Content" xml:space="preserve">
     <value>Klik om te openen</value>
