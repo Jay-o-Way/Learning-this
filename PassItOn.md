@@ -6,61 +6,66 @@ Password manager, based on previous development with AutoIt.
 
 ### Menu
 
-| Control    | Function                                                                                      |
-|:-----------|:----------------------------------------------------------------------------------------------|
+| Control    | Function                                        |
+|:-----------|:------------------------------------------------|
 | App        |
-| **Info**   | open Project info page<br/><https://github.com/Jay-o-Way/Learning-this/blob/main/PassItOn.md> |
-| **Close**  | close the app                                                                                 |
+| **Info**   | open this Project info page                     |
+| **Close**  | close the app                                   |
 | Data       |
-| **Import** | import data from file                                                                         |
-| **Export** | export data to file                                                                           |
+| **Create** | create new subject, starting with ComboBox text |
+| **Edit**   | exit selected subject                           |
+| **Delete** | delete selected subject                         |
+| **Import** | import data from file                           |
+| **Export** | export data to file                             |
 
 ### View 1: Display data
 
-![Screenshot.](images/PIO-screenshot.png)
+![Screenshot of display area.](images/PIO-screenshot.png)
 
-| Control           | Function                                                                                       |
-|:------------------|:-----------------------------------------------------------------------------------------------|
-| ComboBox          | to select existing data, or create new subject by typing a new name                            |
-| DropDown          | select different sub-items<br/>example: subject "Outlook" can contain multiple e-mail accounts |
-| **Create** button | create new subject, starting with ComboBox text                                                |
-| **Edit** button   | exit selected subject                                                                          |
-| **Delete** button | delete selected subject                                                                        |
-| HyperlinkButton   | open URL                                                                                       |
-| ComboBox          | select field "name" (often an e-mail address)                                                  |
-| TextBox           | display password                                                                               |
+| Control           | Function                                                         |
+|:-------------------|:------------------------------------------------------------------|
+| ComboBox          | select existing data, or create new subject by typing a new name |
+| TextBlock         | display location                                                 |
+| Button            | to open location                                                 |
+| ComboBox          | select field "name" (often an e-mail address)                    |
+| TextBlock         | display password                                                 |
+| **Create** button | create new subject, starting with ComboBox text                  |
+| **Edit** button   | exit selected subject                                            |
+| **Delete** button | delete selected subject                                          |
 
 ### View 2: Edit data
 
-![Screenshot.](images/PIO-screenshot-2.png)
+![Screenshot of edit area.](images/PIO-screenshot-2.png)
 
-| Control           | Function            |
-|:------------------|:--------------------|
-| TextBox           | input subject title |
-| TextBox           | input location      |
-| TextBox           | input log-in name   |
-| PasswordBox       | input password      |
-| **Save** button   | confirm input       |
-| **Cancel** button | dismiss changes     |
+| Control           | Function                |
+|:-------------------|:-------------------------|
+| TextBox           | input subject title     |
+| TextBox           | input location          |
+| Buttons           | to switch between names |
+| TextBox           | input log-in name       |
+| PasswordBox       | input password          |
+| **Save** button   | confirm input           |
+| **Cancel** button | dismiss changes         |
 
 ## To do, or not to do?
 
 Based on the old work of the existing (AutoIt) app, we can say the following.
 
-| Function                      | Y/M/N | Prio |
-|-------------------------------|-------|------|
-| Edit and Save passwords       | Y     | 1    |
-| Have a Settings menu          | Y     | 2    |
-| Backup/import data file       | Y     | 3    |
-| Encrypted data storage        | M     | 1    |
-| Main password for app         | M     | 2    |
-| Translation for UI strings    | M     | 2    |
-| Backup data to cloud          | N     | Ø    |
-| Have update check             | N     | Ø    |
+| Function                   | Y/M/N | Prio |   |
+|-----------------------------|--------|-------|----|
+| Edit and Save passwords    | Y     | 1    |   |
+| Have a Settings menu       | Y     | 2    | ✔ |
+| Backup/import data file    | Y     | 3    |   |
+| Encrypted data storage     | M     | 1    |   |
+| Translation for UI strings | M     | 2    |   |
+| Main password for app      | M     | 3    |   |
+| Backup data to cloud       | N     | Ø    |   |
+| Have update check          | N     | Ø    |   |
 
-## Open questions
+## Questions
 
-For open questions, have a look at [Discussions](https://github.com/Jay-o-Way/Learning-this/discussions) in this repo.
+For open questions, have a look at [Discussions](discussions/) in this repo.
+Feel free to ask more or give me advice.
 
 Answered questions:
 <dl>
