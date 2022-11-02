@@ -102,14 +102,13 @@ namespace PassItOn
             {
                 Console.WriteLine($"Creating new subject");
                 // make input possible
-                RegionDisplay.Visibility = Visibility.Collapsed;
-                RegionEdit.Visibility = Visibility.Visible;
-                Input_Title.Text = cbText;
-                //Input_Location = String.Empty;
-                //Input_LogIn = String.Empty
-                //Input_Password = String.Empty;
-                // set focus to first input
-                Input_Title.Focus(FocusState.Keyboard);
+                SelectSubject.IsEditable = true;
+                SubjectLocation.IsReadOnly = false;
+                SubjectLogin.IsEditable = true;
+                SubjectPassword.IsReadOnly = false;
+                // show proper buttons
+                Buttons_Display.Visibility = Visibility.Collapsed;
+                Buttons_Edit.Visibility = Visibility.Visible;
             }
             return;
         }
@@ -123,14 +122,13 @@ namespace PassItOn
             {
                 Console.WriteLine($"Loading data for subject {cbText}");
                 // make input possible
-                RegionDisplay.Visibility = Visibility.Collapsed;
-                RegionEdit.Visibility = Visibility.Visible;
-                Input_Title.Text = cbText;
-                //Input_Location = ?
-                //Input_LogIn = ?
-                //Input_Password = ?
-                // set focus to first input
-                Input_Title.Focus(FocusState.Keyboard);
+                SelectSubject.IsEditable = true;
+                SubjectLocation.IsReadOnly = false;
+                SubjectLogin.IsEditable = true;
+                SubjectPassword.IsReadOnly = false;
+                // show proper buttons
+                Buttons_Display.Visibility = Visibility.Collapsed;
+                Buttons_Edit.Visibility = Visibility.Visible;
             }
             else
             {
@@ -168,21 +166,22 @@ namespace PassItOn
             // if data exists for new name: prompt to overwrite!
             // save data to file
             //Console.WriteLine($"Subject {subject} is saved to file");
-            RegionEdit.Visibility = Visibility.Collapsed;
-            RegionDisplay.Visibility = Visibility.Visible;
+            Buttons_Edit.Visibility = Visibility.Collapsed;
+            Buttons_Display.Visibility = Visibility.Visible;
             return;
         }
         private void CancelEdit(object sender, RoutedEventArgs e)
         {
-            // read strings from Input???
-            // reset input
-            Input_Title.Text = string.Empty;
-            Input_Location.Text = string.Empty;
-            Input_LogIn.Text = string.Empty;
-            Input_Password.Password = string.Empty;
+            // reset input?
+            // make input impossible
+            SelectSubject.IsEditable = false;
+            SubjectLocation.IsReadOnly = true;
+            SubjectLogin.IsEditable = false;
+            SubjectPassword.IsReadOnly = true;
 
-            RegionEdit.Visibility = Visibility.Collapsed;
-            RegionDisplay.Visibility = Visibility.Visible;
+            // show proper buttons
+            Buttons_Edit.Visibility = Visibility.Collapsed;
+            Buttons_Display.Visibility = Visibility.Visible;
             return;
         }
 

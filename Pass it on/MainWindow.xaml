@@ -54,36 +54,34 @@
         </MenuBar>
 
         <!-- Display -->
-        <StackPanel x:Name="RegionDisplay" Grid.Row="1" Visibility="Visible" Style="{StaticResource PrimaryStackStyle}">
+        <StackPanel x:Name="RegionDisplay" Grid.Row="1" Style="{StaticResource PrimaryStackStyle}">
             <ComboBox x:Name="SelectSubject" x:Uid="SubjectTitle"
-                      IsEditable="True" HorizontalAlignment="Stretch"
+                      HorizontalAlignment="Stretch"
+                      IsEditable="True"
                       TextSubmitted="LoadSubjectData"
                       >
                 <!--
-            ItemsSource="{x:Bind Subjects}"
-            SelectionChanged="LoadSubjectData" ?
-            -->
+                    ItemsSource="{x:Bind Subjects}"
+                    SelectionChanged="LoadSubjectData" ?
+                    -->
                 <!--
-            https://learn.microsoft.com/uwp/api/windows.ui.xaml.datatemplate?view=winrt-22621
-            https://learn.microsoft.com/windows/uwp/data-binding/data-binding-in-depth
-            -->
+                    https://learn.microsoft.com/uwp/api/windows.ui.xaml.datatemplate?view=winrt-22621
+                    https://learn.microsoft.com/windows/uwp/data-binding/data-binding-in-depth
+                    -->
                 <!--<DataTemplate>-->
-                <ComboBoxItem Content="Alfa"/>
-                <ComboBoxItem Content="Bravo"/>
-                <ComboBoxItem Content="Charly"/>
+                <ComboBoxItem Content="Outlook"/>
+                <ComboBoxItem Content="Google"/>
+                <ComboBoxItem Content="GitHub"/>
                 <!--</DataTemplate>-->
             </ComboBox>
 
-            <TextBlock x:Uid="SubjectLocationHeader"/>
-            <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch"
-                        Style="{StaticResource ChildStackStyle}"
-            >-->
             <Grid ColumnSpacing="8" ColumnDefinitions="*, auto">
-                <TextBlock x:Name="SubjectLocation"
-                           Grid.Column="0"
-                           IsTextSelectionEnabled="true"
-                           >
-                </TextBlock>
+                <TextBox x:Name="SubjectLocation"
+                         x:Uid="SubjectLocation"
+                         Grid.Column="0"
+                         IsReadOnly="true"
+>
+                </TextBox>
                 <Button x:Name="OpenSubjectLocation"
                         Grid.Column="1"
                         Content="&#xe8a7;" FontFamily="{StaticResource SymbolThemeFontFamily}"
@@ -93,46 +91,34 @@
                     </ToolTipService.ToolTip>
                 </Button>
             </Grid>
-            <!--</StackPanel>-->
 
             <ComboBox x:Name="SubjectLogin" x:Uid="SubjectLogin" HorizontalAlignment="Stretch">
                 <!--<DataTemplate>-->
-                <ComboBoxItem Content="Delta"/>
-                <ComboBoxItem Content="Echo"/>
-                <ComboBoxItem Content="Foxtrot"/>
+                <ComboBoxItem Content="jane.doe@outlook.com"/>
+                <ComboBoxItem Content="john.doe@outlook.com"/>
+                <ComboBoxItem Content="jay@outlook.com"/>
                 <!--</DataTemplate>-->
             </ComboBox>
 
-            <TextBlock x:Uid="SubjectPassword"/>
-            <TextBlock x:Name="SubjectPassword" IsTextSelectionEnabled="true"/>
+            <TextBox x:Name="SubjectPassword" x:Uid="SubjectPassword" IsReadOnly="true"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Style="{StaticResource PrimaryStackStyle}" Visibility="{x:Bind RegionDisplay.Visibility, Mode=OneWay}">
+        <StackPanel
+            x:Name="Buttons_Display"
+            Grid.Row="2"
+            Orientation="Horizontal"
+            Style="{StaticResource PrimaryStackStyle}">
             <Button x:Uid="Button_Create" IsEnabled="False" Click="CreateNewSubject"/>
             <Button x:Uid="Button_Edit" IsEnabled="True" Click="EditSubject"/>
             <Button x:Uid="Button_Delete" IsEnabled="True" Click="DeleteSubject"/>
         </StackPanel>
 
-        <!-- Edit -->
-        <StackPanel x:Name="RegionEdit" Grid.Row="1" Visibility="Collapsed" Style="{StaticResource PrimaryStackStyle}">
-            <TextBox x:Name="Input_Title" x:Uid="SubjectTitle"/>
-            <TextBox x:Name="Input_Location" x:Uid="SubjectLocation2"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Style="{StaticResource ChildStackStyle}">
-                <Button>
-                    <FontIcon Glyph="&#xe76b;" FontSize="8"/>
-                </Button>
-                <Button>
-                    <FontIcon Glyph="&#xe710;" FontSize="8"/>
-                </Button>
-                <Button>
-                    <FontIcon Glyph="&#xe76c;" FontSize="8"/>
-                </Button>
-            </StackPanel>
-            <TextBox x:Name="Input_LogIn" x:Uid="SubjectLogIn"/>
-            <PasswordBox x:Name="Input_Password" x:Uid="SubjectPassword2"/>
-        </StackPanel>
-
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Stretch" Style="{StaticResource PrimaryStackStyle}" Visibility="{x:Bind RegionEdit.Visibility, Mode=OneWay}">
+        <StackPanel
+            x:Name="Buttons_Edit"
+            Grid.Row="2"
+            Orientation="Horizontal"
+            HorizontalAlignment="Stretch"
+            Style="{StaticResource PrimaryStackStyle}" Visibility="Collapsed">
             <Button x:Uid="Button_Save" Style="{ThemeResource AccentButtonStyle}" Click="SaveEdit" />
             <Button x:Uid="Button_Cancel" Click="CancelEdit"/>
         </StackPanel>
