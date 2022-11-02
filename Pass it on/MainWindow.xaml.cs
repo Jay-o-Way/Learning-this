@@ -71,7 +71,7 @@ namespace PassItOn
                 Console.WriteLine($"Loading data for subject {cbText}");
                 SubjectLocation.Text = "World!";
                 SubjectLogin.Text = "Name";
-                SubjectPassword.Text = "Password";
+                SubjectPassword.Password = "Password";
             }
             else
             {
@@ -79,7 +79,7 @@ namespace PassItOn
                 // Mark the event as handled so the framework doesn't update the selected item.
                 SubjectLocation.Text = string.Empty;
                 SubjectLogin.Text = string.Empty;
-                SubjectPassword.Text = string.Empty;
+                SubjectPassword.Password = string.Empty;
                 e.Handled = true;
             }
             // source: https://learn.microsoft.com/windows/apps/design/controls/combo-box#sample---validate-input-and-add-to-list
@@ -101,15 +101,17 @@ namespace PassItOn
             if (IsValid(cbText))
             {
                 Console.WriteLine($"Creating new subject");
+
                 // make input possible
-                RegionDisplay.Visibility = Visibility.Collapsed;
-                RegionEdit.Visibility = Visibility.Visible;
-                Input_Title.Text = cbText;
-                //Input_Location = String.Empty;
-                //Input_LogIn = String.Empty
-                //Input_Password = String.Empty;
-                // set focus to first input
-                Input_Title.Focus(FocusState.Keyboard);
+                SelectSubject.IsEditable = true;
+                SubjectLocation.IsReadOnly = false;
+                SubjectLogin.IsEditable = true;
+                //SubjectPassword.IsReadOnly = false;
+                SubjectPassword.PasswordRevealMode = PasswordRevealMode.Visible;
+
+                // show proper buttons
+                Buttons_Display.Visibility = Visibility.Collapsed;
+                Buttons_Edit.Visibility = Visibility.Visible;
             }
             return;
         }
@@ -123,14 +125,14 @@ namespace PassItOn
             {
                 Console.WriteLine($"Loading data for subject {cbText}");
                 // make input possible
-                RegionDisplay.Visibility = Visibility.Collapsed;
-                RegionEdit.Visibility = Visibility.Visible;
-                Input_Title.Text = cbText;
-                //Input_Location = ?
-                //Input_LogIn = ?
-                //Input_Password = ?
-                // set focus to first input
-                Input_Title.Focus(FocusState.Keyboard);
+                SelectSubject.IsEditable = true;
+                SubjectLocation.IsReadOnly = false;
+                SubjectLogin.IsEditable = true;
+                SubjectPassword.PasswordRevealMode = PasswordRevealMode.Visible;
+
+                // show proper buttons
+                Buttons_Display.Visibility = Visibility.Collapsed;
+                Buttons_Edit.Visibility = Visibility.Visible;
             }
             else
             {
@@ -152,7 +154,7 @@ namespace PassItOn
                 // set ComboBox + others
                 SubjectLocation.Text = string.Empty;
                 SubjectLogin.Text = string.Empty;
-                SubjectPassword.Text = string.Empty;
+                SubjectPassword.Password = string.Empty;
             }
             else
             {
@@ -168,21 +170,22 @@ namespace PassItOn
             // if data exists for new name: prompt to overwrite!
             // save data to file
             //Console.WriteLine($"Subject {subject} is saved to file");
-            RegionEdit.Visibility = Visibility.Collapsed;
-            RegionDisplay.Visibility = Visibility.Visible;
+            Buttons_Edit.Visibility = Visibility.Collapsed;
+            Buttons_Display.Visibility = Visibility.Visible;
             return;
         }
         private void CancelEdit(object sender, RoutedEventArgs e)
         {
-            // read strings from Input???
             // reset input
-            Input_Title.Text = string.Empty;
-            Input_Location.Text = string.Empty;
-            Input_LogIn.Text = string.Empty;
-            Input_Password.Password = string.Empty;
+            // make input impossible
+            SelectSubject.IsEditable = false;
+            SubjectLocation.IsReadOnly = true;
+            SubjectLogin.IsEditable = false;
+            SubjectPassword.PasswordRevealMode = PasswordRevealMode.Hidden;
 
-            RegionEdit.Visibility = Visibility.Collapsed;
-            RegionDisplay.Visibility = Visibility.Visible;
+            // show proper buttons
+            Buttons_Edit.Visibility = Visibility.Collapsed;
+            Buttons_Display.Visibility = Visibility.Visible;
             return;
         }
 

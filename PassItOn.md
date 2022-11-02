@@ -18,34 +18,22 @@ Password manager, based on previous development with AutoIt.
 | **Import** | import data from file                           |
 | **Export** | export data to file                             |
 
-### View 1: Display data
+### Display data
 
 ![Screenshot of display area.](images/PIO-screenshot.png)
 
 | Control           | Function                                                         |
 |:-------------------|:------------------------------------------------------------------|
 | ComboBox          | select existing data, or create new subject by typing a new name |
-| TextBlock         | display location                                                 |
+| TextBox           | display location                                                 |
 | Button            | to open location                                                 |
 | ComboBox          | select field "name" (often an e-mail address)                    |
-| TextBlock         | display password                                                 |
+| TextBox           | display password                                                 |
 | **Create** button | create new subject, starting with ComboBox text                  |
 | **Edit** button   | exit selected subject                                            |
 | **Delete** button | delete selected subject                                          |
-
-### View 2: Edit data
-
-![Screenshot of edit area.](images/PIO-screenshot-2.png)
-
-| Control           | Function                |
-|:-------------------|:-------------------------|
-| TextBox           | input subject title     |
-| TextBox           | input location          |
-| Buttons           | to switch between names |
-| TextBox           | input log-in name       |
-| PasswordBox       | input password          |
-| **Save** button   | confirm input           |
-| **Cancel** button | dismiss changes         |
+| **Save** button   | confirm input                                                    |
+| **Cancel** button | dismiss changes                                                  |
 
 ## To do, or not to do?
 
