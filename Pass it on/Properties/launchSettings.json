@@ -1,10 +1,12 @@
 {
   "profiles": {
     "Pass it on (Package)": {
-      "commandName": "MsixPackage"
+      "commandName": "MsixPackage",
+      "hotReloadEnabled": true
     },
     "Pass it on (Unpackaged)": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "hotReloadEnabled": true
     }
   }
 }

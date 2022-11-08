@@ -159,6 +159,15 @@
   <data name="MenuBar_Info.Text" xml:space="preserve">
     <value>Info</value>
   </data>
+  <data name="MenuBar_LangEN.Text" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="MenuBar_LangNL.Text" xml:space="preserve">
+    <value>Dutch</value>
+  </data>
+  <data name="MenuBar_Langs.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
   <data name="SubjectLocation.Header" xml:space="preserve">
     <value>Location</value>
   </data>

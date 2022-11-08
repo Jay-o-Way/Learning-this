@@ -19,12 +19,22 @@
         <!-- Menu -->
         <MenuBar Grid.Row="0">
             <MenuBarItem x:Uid="MenuBar_App">
+                <!--<MenuFlyoutItem x:Uid="MenuBar_Langs" IsEnabled="False"/>-->
+                <MenuFlyoutSubItem x:Uid="MenuBar_Langs">
+                    <RadioMenuFlyoutItem x:Uid="MenuBar_LangEN" GroupName="LanguageSelection" Click="SetLanguage"/>
+                    <RadioMenuFlyoutItem x:Uid="MenuBar_LangNL" GroupName="LanguageSelection" Click="SetLanguage"/>
+                </MenuFlyoutSubItem>
+
+                <MenuFlyoutSeparator/>
+
                 <MenuFlyoutItem x:Uid="MenuBar_Info" Click="OpenInfo">
                     <MenuFlyoutItem.Icon>
                         <FontIcon Glyph="&#xe946;"/>
                     </MenuFlyoutItem.Icon>
                 </MenuFlyoutItem>
+
                 <MenuFlyoutSeparator/>
+
                 <MenuFlyoutItem x:Uid="MenuBar_Close" Click="Exit">
                     <MenuFlyoutItem.Icon>
                         <FontIcon Glyph="&#xe8bb;"/>
@@ -36,8 +46,9 @@
                 <MenuFlyoutItem x:Uid="MenuBar_Create" Icon="Add" Click="CreateNewSubject"/>
                 <MenuFlyoutItem x:Uid="MenuBar_Edit" Icon="Edit" Click="EditSubject"/>
                 <MenuFlyoutItem x:Uid="MenuBar_Delete" Icon="Delete" Click="DeleteSubject"/>
-                <!--IsEnabled="{x:Bind RegionDisplay.Visibility, Mode=OneWay, ConverterParameter=Reverse, Converter={StaticResource BooleanToVisibilityConverter}}"-->
+
                 <MenuFlyoutSeparator/>
+
                 <MenuFlyoutItem x:Uid="MenuBar_Import">
                     <!--Click="ImportFromFile"-->
                     <MenuFlyoutItem.Icon>
@@ -68,7 +79,7 @@
                     https://learn.microsoft.com/uwp/api/windows.ui.xaml.datatemplate?view=winrt-22621
                     https://learn.microsoft.com/windows/uwp/data-binding/data-binding-in-depth
                     -->
-                <!--<DataTemplate>-->
+                <!--<DataTemplate>??-->
                 <ComboBoxItem Content="Outlook"/>
                 <ComboBoxItem Content="Google"/>
                 <ComboBoxItem Content="GitHub"/>
@@ -102,9 +113,10 @@
             </ComboBox>
 
             <!--<TextBox x:Name="SubjectPassword" x:Uid="SubjectPassword" IsReadOnly="true"/>-->
-            <PasswordBox x:Name="SubjectPassword" x:Uid="SubjectPassword"/>
+            <PasswordBox x:Name="SubjectPassword" x:Uid="SubjectPassword" PasswordRevealMode="Visible"/>
         </StackPanel>
 
+        <!-- Buttons -->
         <StackPanel
             x:Name="Buttons_Display"
             Grid.Row="2"

@@ -174,4 +174,13 @@
   <data name="SubjectPassword.Header" xml:space="preserve">
     <value>Wachtwoord</value>
   </data>
+  <data name="MenuBar_LangEN.Text" xml:space="preserve">
+    <value>Engels</value>
+  </data>
+  <data name="MenuBar_LangNL.Text" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="MenuBar_Langs.Text" xml:space="preserve">
+    <value>Taal</value>
+  </data>
 </root>
