@@ -40,7 +40,7 @@ namespace PassItOn
         public MainWindow()
         {
             this.InitializeComponent();
-            //ExtendsContentIntoTitleBar = true; // works, but is super ugly
+            ExtendsContentIntoTitleBar = true;
 
             // Retrieve the window handle (HWND) of the current (XAML) WinUI 3 window.
             var hWnd =
