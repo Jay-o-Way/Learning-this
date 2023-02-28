@@ -10,13 +10,13 @@ Shelved, because I can't even get it to work. 😰😭🆘
 
 ### Menu
 
-| Control      | Function                                        |
-|:--------------|:-------------------------------------------------|
-| App          |
+| Label        | Function                                        |
+|:-------------|:------------------------------------------------|
+| (App)        |
 | **Language** | UI language                                     |
 | **Info**     | open this Project info page                     |
 | **Close**    | close the app                                   |
-| Data         |
+| (Data)       |
 | **Create**   | create new subject, starting with ComboBox text |
 | **Edit**     | exit selected subject                           |
 | **Delete**   | delete selected subject                         |
@@ -28,7 +28,7 @@ Shelved, because I can't even get it to work. 😰😭🆘
 ![Screenshot of display area.](images/PIO-screenshot.png)
 
 | Control           | Function                                                         |
-|:-------------------|:------------------------------------------------------------------|
+|:------------------|:-----------------------------------------------------------------|
 | ComboBox          | select existing data, or create new subject by typing a new name |
 | TextBox           | display location                                                 |
 | Button            | to open location                                                 |
@@ -45,7 +45,7 @@ Shelved, because I can't even get it to work. 😰😭🆘
 Based on the old work of the existing (AutoIt) app, we can say the following.
 
 | Function                   | Y/M/N | Prio |   |
-|-----------------------------|--------|-------|----|
+|----------------------------|-------|------|---|
 | Edit and Save passwords    | Y     | 1    | 🔧 |
 | Have a Settings menu       | Y     | 2    | ✔ |
 | Backup/import data file    | Y     | 3    |   |
