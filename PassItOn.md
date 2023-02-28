@@ -2,6 +2,10 @@
 
 Password manager, based on previous development with AutoIt.
 
+## Current Status
+
+Shelved, because I can't even get it to work. 😰😭🆘
+
 ## GUI
 
 ### Menu
